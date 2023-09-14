@@ -1,0 +1,75 @@
+.App {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 16px;
+  padding: 16px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  margin-right: 8px;
+  width: 50px; /* Устанавливаем желаемую ширину */
+  height: 50px; /* Устанавливаем желаемую высоту */
+  object-fit: cover; /* Обрезаем изображение по размерам контейнера */
+}
+
+
+.user-info {
+  flex-grow: 1;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.user-info p {
+  margin: 0;
+  color: #555;
+}
+
+.post-content p {
+  margin-bottom: 16px;
+}
+
+.post-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.post-actions button {
+  background-color: #fff;
+  border: none;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.like-button {
+  color: #1877f2;
+}
+
+.comment-button {
+  color: #333;
+}
+
+.share-button {
+  color: #00a400;
+}
