@@ -1,66 +1,30 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import Header from './components/Header';
+import Goods from './components/Goods';
+import Cart from './components/Cart';
+import Item from './components/Item';
 import './App.css';
 
-function App() {
-    const [input, setInput] = useState(''); // Для хранения введенного выражения
-    const [result, setResult] = useState(''); // Для хранения результата вычислений
+export default function App() {
+    const [currentPage, setCurrentPage] = useState('goods');
+    const [currentGood, setCurrentGood] = useState('');
+    const [cart, setCart] = useState([]);
 
-    const handleButtonClick = (value) => {
-        setInput(input + value);
-    };
+    function switchPage(page, good = '') {
+        setCurrentPage(page);
+        setCurrentGood(good);
+    }
 
-    const calculateResult = () => {
-        try {
-            setResult(eval(input));
-        } catch (error) {
-            setResult('Error');
-        }
-    };
-
-    const clearInput = () => {
-        setInput('');
-        setResult('');
-    };
+    function addToCart(item) {
+        setCart((currentCart) => ([...currentCart, item]));
+    }
 
     return (
-        <div className="App">
-            <div className="calculator">
-                <div className="display">
-                    <input type="text" value={input} readOnly />
-                    <div className="result">{result}</div>
-                </div>
-                <div className="buttons">
-                    <div className="row">
-                        <button onClick={() => handleButtonClick('7')}>7</button>
-                        <button onClick={() => handleButtonClick('8')}>8</button>
-                        <button onClick={() => handleButtonClick('9')}>9</button>
-                        <button onClick={() => handleButtonClick('+')}>+</button>
-                    </div>
-                    <div className="row">
-                        <button onClick={() => handleButtonClick('4')}>4</button>
-                        <button onClick={() => handleButtonClick('5')}>5</button>
-                        <button onClick={() => handleButtonClick('6')}>6</button>
-                        <button onClick={() => handleButtonClick('-')}>-</button>
-                    </div>
-                    <div className="row">
-                        <button onClick={() => handleButtonClick('1')}>1</button>
-                        <button onClick={() => handleButtonClick('2')}>2</button>
-                        <button onClick={() => handleButtonClick('3')}>3</button>
-                        <button onClick={() => handleButtonClick('*')}>*</button>
-                    </div>
-                    <div className="row">
-                        <button onClick={() => handleButtonClick('0')}>0</button>
-                        <button onClick={() => handleButtonClick('.')}>.</button>
-                        <button onClick={clearInput}>C</button>
-                        <button onClick={() => handleButtonClick('/')}>/</button>
-                    </div>
-                    <div className="row">
-                        <button onClick={calculateResult}>=</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <>
+            <Header handleClick={switchPage} />
+            {currentPage === 'goods' && <Goods handleClick={switchPage} />}
+            {currentPage === 'cart' && <Cart cart={cart} />}
+            {currentPage === 'item' && <Item good={currentGood} addToCart={addToCart}/>}
+        </>
     );
 }
-
-export default App;

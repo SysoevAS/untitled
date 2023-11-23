@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://unpkg.com/@babel/standalone/babel.min.js" data-presets="react,es2015,stage-2"
+        data-plugins="transform-modules-umd"></script>
+<script type="importmap">
+    {
+        "imports": {
+            "react": "https://esm.sh/react?dev",
+            "react-dom/client": "https://esm.sh/react-dom/client?dev"
+        }
+    }
+</script>
+<script type="text/babel" data-type="module">
+    import React from 'react';
+    import { createRoot } from 'react-dom/client';
+
+    function BookFace({ book }) {
+        return (
+            <div className="book-card">
+                <img
+                    className="book-image"
+                    src={book.imageUrl}
+                />
+                <p className="book-title">{book.title}</p>
+                <p className="book-author">{book.author}</p>
+                <p className="book-price">{book.price}</p>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        );
+    }
+    function CaterOfBook({children}) {
+        return (
+            <div className="book-row">
+                {children}
+            </div>
+        )
+    }
+    function Obo() {
+        return(<nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">
+                Shop by Sysoev
+            </a>
+            <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav">
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">
+                            Genre
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">
+                            Author
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">
+                            Publisher
+                        </a>
+                    </li>
+                </ul>
+                <form className="form-inline my-2 my-lg-0" action="any.php" method="GET">
+                    <input
+                        className="form-control"
+                        type="search"
+                        name="search"
+                        placeholder="Search..."
+                        aria-label="Search"
+                    />
+                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        Search
+                    </button>
+                </form>
+            </div>
+</nav>)
+    }
+    function ShopOfBooks() {
+        return (
+            <div>
+                <Obo/>
+                <h1>Top Picks</h1>
+                <CaterOfBook>
+                    <BookFace
+                        book={{
+                            title: 'Сказки древних славян',
+                            author: 'Иван Иванович',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/29/815/2981580-1.jpg',
+                            price: '$12.99',
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Приключения на корабле',
+                            author: 'Анна Петрова',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/013/3001387-1.jpg',
+                            price: '$9.99',
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Тайны цивилизаций',
+                            author: 'Алексей Сидоров',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/041/3004193-3.jpg',
+                            price: '$14.99',
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Сияние Полуночи',
+                            author: 'Джон Смит',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/003/3000369-9.jpg',
+                            price: '$19.99',
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Побег',
+                            author: 'Екатерина Иванова',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/012/3001255-2.jpg',
+                            price: '$8.99',
+                        }}
+                    />
+                </CaterOfBook>
+                <h1>New Arrivals</h1>
+                <div className="book-row">
+                    <BookFace
+                        book={{
+                            title: 'Непорочная пустота',
+                            author: 'Victor Pelevin',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/003/3000320-1.jpg',
+                            price: '$13.99'
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Самая страшная книга',
+                            author: 'Victor Pelevin',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/067/3006760-4.jpg',
+                            price: '$13.99'
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Дахштайн и Лола Попсин',
+                            author: 'Victor Pelevin',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/015/3001525-4.jpg',
+                            price: '$13.99'
+                        }}
+                    />
+                    <BookFace
+                        book={{
+                            title: 'Полуночное солнце',
+                            author: 'Victor Pelevin',
+                            imageUrl: 'https://cdn.img-gorod.ru/200x280/nomenclature/30/069/3006900-4.jpg',
+                            price: '$15.99'
+                        }}
+                    />
+                </div>
+            </div>
+        );
+    }
+
+    createRoot(document.getElementById('app')).render(<ShopOfBooks/>);
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Your+Font+Name:wght@400;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>My ShopOfBooks</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('https://example.com/new-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Your-Font-Name', sans-serif;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar {
+            background-color: #0e5c70;
+        }
+
+        .navbar-brand {
+            font-family: 'Arial, sans-serif', sans-serif;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .book-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2% 0;
+        }
+
+        .book-card {
+            margin: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .book-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px; /* Добавьте закругленные углы */
+        }
+
+        .book-title {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .book-author {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .book-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0e5c70;
+        }
+
+        .btn-buy {
+            width: 100%;
+            margin-top: 10px;
+            background-color: #0e5c70;
+            color: #fff;
+            font-weight: bold;
+            border: none; /* Уберите границы */
+            border-radius: 5px; /* Добавьте закругленные углы */
+            padding: 10px; /* Увеличьте отступы */
+        }
+        /* Стили для контейнера формы */
+        .form-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Стили для текстового поля */
+        .form-control {
+            border: 2px solid #6c757d;
+            border-radius: 0;
+        }
+
+        .form-control:focus {
+            border-color: #28a745;
+            box-shadow: none;
+        }
+
+        /* Стили для кнопки поиска */
+        .btn-outline-success {
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-outline-success:hover {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        /* Определение размеров для формы и элементов */
+        .form-inline, .form-control, .btn-outline-success {
+            margin-right: 10px;
+        }
+
+        /* Определение высоты текстового поля и кнопки для выравнивания с текстом */
+        .form-control, .btn-outline-success {
+            height: 40px;
+        }
+
+        /* Удаление фонового цвета у кнопки */
+        .btn-outline-success {
+            background-color: transparent;
+        }
+    </style>
+</head>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Shop by Sysoev</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Genre</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Author</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Publisher</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" action="any.php" method="GET">
+            <input class="form-control" type="search" name="search" placeholder="Search..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </div>
+</nav>
+<div id="app"></div>
+</body>
+</html>
