@@ -1,5 +1,5 @@
-export default function Cart({ cart, clearCart }) {
-    let cartItems = cart.map((item) => (
+export default function Korzina({ korzina, clearkorzina }) {
+    let korzinaItems = korzina.map((item) => (
         <div key={item.id} className="card">
             <div
                 className="photo"
@@ -12,19 +12,19 @@ export default function Cart({ cart, clearCart }) {
         </div>
     ));
 
-    let showItems = cartItems.length > 0;
+    let showItems = korzinaItems.length > 0;
 
     return (
-        <section className="cart">
+        <section className="korzina">
             <h2>Cart:</h2>
             <div className="container">
-                {cartItems}
+                {korzinaItems}
                 {!showItems && <div className="nothing">The basket is empty</div>}
             </div>
             {showItems && (
                 <div>
                     <button>Place an order</button>
-                    <button onClick={clearCart}>Clear Cart</button>
+                    <button onClick={clearkorzina}>Clear korzina</button>
                 </div>
             )}
         </section>

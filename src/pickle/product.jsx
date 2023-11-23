@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-export default function Item({ good, addToCart }) {
+export default function Product({ good, addTokorzina }) {
   const [showFullText, setShowFullText] = useState(false);
   const [added, setAdded] = useState(false);
 
   function add() {
-    addToCart(good);
+    addTokorzina(good);
     setAdded(true);
   }
 

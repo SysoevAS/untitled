@@ -1,6 +1,6 @@
 import goods from '../goods.js';
 
-export default function Goods({ handleClick }) {
+export default function Tovari({ handleClick }) {
   return (
       <section className="goods">
         {goods.map((good) => (

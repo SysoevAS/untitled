@@ -141,7 +141,7 @@ header .search-button:hover {
   opacity: 70%; /* уменьшена прозрачность текста */
 }
 
-.cart {
+.korzina {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,7 +149,7 @@ header .search-button:hover {
   padding: 2em; /* добавлен внутренний отступ для контейнера корзины */
 }
 
-.cart .card {
+.korzina .card {
   border: 2px solid #0e5c70; /* изменен цвет контура картам товаров в корзине */
   margin: 1.5em;
   display: flex;
@@ -163,7 +163,7 @@ header .search-button:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* добавлена тень */
 }
 
-.cart .photo {
+.korzina .photo {
   border-radius: 1em;
   width: 7rem; /* увеличен размер изображения товара в корзине */
   aspect-ratio: 1;
@@ -172,23 +172,23 @@ header .search-button:hover {
   cursor: pointer;
 }
 
-.cart .name {
+.korzina .name {
   font-size: 1.4rem; /* немного увеличенный размер шрифта */
   color: #333; /* изменен цвет текста */
 }
 
-.cart .price {
+.korzina .price {
   font-size: 1.6rem; /* уменьшенный размер шрифта */
   opacity: 70%; /* уменьшена прозрачность текста */
 }
 
-.cart h2 {
+.korzina h2 {
   text-align: center;
   margin-top: 2em; /* увеличен внешний отступ заголовка */
   font-size: 2rem; /* увеличенный размер шрифта заголовка */
 }
 
-.cart button {
+.korzina button {
   background-color: #0e5c70; /* изменен цвет кнопки */
   border: 2px solid #0e5c70; /* изменен цвет границы кнопки */
   color: #fff;
@@ -201,12 +201,12 @@ header .search-button:hover {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* добавлены эффекты плавного изменения при наведении */
 }
 
-.cart button:hover {
+.korzina button:hover {
   background-color: #fff;
   color: #0e5c70;
 }
 
-.cart .nothing {
+.korzina .nothing {
   text-align: center;
   margin-top: 2em; /* увеличен внешний отступ для текста "нет товаров" */
   font-size: 1.2rem; /* уменьшенный размер шрифта */
