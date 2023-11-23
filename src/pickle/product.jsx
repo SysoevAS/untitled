@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function Product({ good, addTokorzina }) {
   const [showFullText, setShowFullText] = useState(false);
   const [added, setAdded] = useState(false);
-
+//функция  вызывает  add To korzina, передавая ей good и устанавливает состояние added в true.
   function add() {
     addTokorzina(good);
     setAdded(true);

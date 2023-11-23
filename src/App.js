@@ -6,15 +6,16 @@ import Product from './pickle/product';
 import './App.css';
 
 export default function App() {
+    //хуки для отслеживания тек страницы, тектовара и содер корзины
     const [currentPage, setCurrentPage] = useState('goods');
     const [currentGood, setCurrentGood] = useState('');
     const [korzina, setkorzina] = useState([]);
-
+//быстро обновляем товар, плюс следим за товаром
     function switchPage(page, good = '') {
         setCurrentPage(page);
         setCurrentGood(good);
     }
-
+//функ, чтобы закинуть товар в корзину
     function addTokorzina(item) {
         setkorzina((currentkorzina) => ([...currentkorzina, item]));
     }

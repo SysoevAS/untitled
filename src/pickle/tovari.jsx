@@ -1,4 +1,4 @@
-import goods from '../goods.js';
+import goods from './goods.js';
 
 export default function Tovari({ handleClick }) {
   return (
