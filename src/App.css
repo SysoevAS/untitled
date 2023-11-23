@@ -2,75 +2,143 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif; /* добавлен общий шрифт для всех элементов */
 }
 
 :root {
-  --accent-color: rgb(61, 15, 170);
+  --accent-color: #FF5722; /* изменен цвет акцента */
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1200px; /* увеличена максимальная ширина контейнера */
+  margin: 0 auto; /* добавлено центрирование контейнера по горизонтали */
+  padding: 1em; /* добавлен внутренний отступ для контейнера */
+  background-color: #0e5c70; /* добавлен фон контейнера */
+  border-radius: 1em; /* добавлен скругленный угол контейнера */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* добавлена тень контейнера */
 }
 
 header {
-  background-color: var(--accent-color);
-  padding-block: 1em;
-  color: white;
+  background: linear-gradient(45deg, #3498db, #e74c3c); /* градиентный фон */
+  padding: 1em;
+  color: #fff;
+  text-align: center; /* выравнивание текста по центру */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* тень */
 }
+
 header .container {
   display: flex;
+  justify-content: space-between; /* равномерное распределение элементов по ширине */
   align-items: center;
 }
+
 header .logo {
-  font-family: 'Tektur', sans-serif;
-  font-size: 1.6rem;
-  color: white;
-  margin-right: auto;
-  cursor: pointer;
-}
-header nav {
-  display: flex;
-  gap: 2em;
-}
-header .nav-item {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3.5rem; /* увеличенный размер шрифта */
+  color: #fff;
   cursor: pointer;
 }
 
-.goods .card {
-  border: none;
-  width: 25%;
-  padding: 0.7em;
-  border-radius: 0.5em;
+header nav {
+  display: flex;
+  gap: 1.5em;
 }
+
+header .nav-item {
+  cursor: pointer;
+  font-size: 2.2rem; /* уменьшенный размер шрифта */
+  color: rgba(255, 255, 255, 0.8); /* полупрозрачный цвет */
+  transition: color 0.3s ease-in-out; /* плавное изменение цвета при наведении */
+}
+
+header .nav-item:hover {
+  color: #fff; /* изменение цвета при наведении */
+}
+
+/* Дополнительные стили для разнообразия */
+header .logo:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* тень текста при наведении на логотип */
+}
+
+header .search-box {
+  flex-grow: 1; /* занимает доступное пространство */
+}
+
+header .search-input {
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1rem;
+}
+
+header .search-button {
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+header .search-button:hover {
+  background-color: #0e5c70;
+}
+.goods .card {
+  border: 2px solid #0e5c70; /* изменен цвет контура картам товаров */
+  width: 25%; /* уменьшена ширина карты товара */
+  padding: 1.5em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавлена тень */
+}
+
 .goods {
-  max-width: 800px;
-  margin-inline: auto;
+  max-width: 1000px; /* увеличена максимальная ширина контейнера для товаров */
+  margin: 20px auto; /* увеличен внешний отступ и центрирование */
   display: flex;
   flex-wrap: wrap;
-  padding-block: 1em;
+  padding: 2em;
 }
+
 .goods .photo {
   width: 100%;
-  border-radius: 0.2em;
+  border-radius: 1em;
   aspect-ratio: 1;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out; /* добавлен эффект плавного изменения при наведении */
 }
+
+.goods .photo:hover {
+  transform: scale(1.1); /* увеличение изображения при наведении */
+}
+
 .goods button {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 0.3em;
-  padding-top: 0.1em;
-  padding-bottom: 0.3em;
+  background-color: #FF5722; /* изменен цвет кнопки */
+  color: #fff;
+  border: 2px solid #FF5722; /* изменен цвет границы кнопки */
+  border-radius: 0.5em;
+  padding: 0.7em 1.2em; /* немного увеличен отступ кнопки */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* добавлены эффекты плавного изменения при наведении */
 }
+
+.goods button:hover {
+  background-color: #fff;
+  color: #FF5722;
+}
+
 .goods .name {
-  padding-top: 0.3em;
+  padding-top: 1em;
+  font-size: 1.6rem; /* немного увеличенный размер шрифта */
+  color: #333; /* изменен цвет текста */
 }
+
 .goods .price {
-  font-size: 1.3rem;
-  opacity: 90%;
+  font-size: 1.3rem; /* уменьшенный размер шрифта */
+  opacity: 70%; /* уменьшена прозрачность текста */
 }
 
 .cart {
@@ -78,86 +146,124 @@ header .nav-item {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2em; /* добавлен внутренний отступ для контейнера корзины */
 }
+
 .cart .card {
-  border: none;
-  margin: 1em;
+  border: 2px solid #0e5c70; /* изменен цвет контура картам товаров в корзине */
+  margin: 1.5em;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1em;
-  margin-top: 2em;
-  max-width: 300px;
-  margin-inline: auto;
+  gap: 1.5em;
+  max-width: 400px; /* увеличена максимальная ширина карточки в корзине */
+  margin: 0 auto;
+  padding: 1em; /* добавлен внутренний отступ для карточки в корзине */
+  border-radius: 1em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* добавлена тень */
 }
+
 .cart .photo {
-  border-radius: 0.2em;
-  width: 5rem;
+  border-radius: 1em;
+  width: 7rem; /* увеличен размер изображения товара в корзине */
   aspect-ratio: 1;
   background-size: cover;
   background-position: center;
   cursor: pointer;
 }
+
 .cart .name {
-  font-size: 1.2rem;
+  font-size: 1.4rem; /* немного увеличенный размер шрифта */
+  color: #333; /* изменен цвет текста */
 }
+
 .cart .price {
-  font-size: 1.5rem;
-  opacity: 90%;
+  font-size: 1.6rem; /* уменьшенный размер шрифта */
+  opacity: 70%; /* уменьшена прозрачность текста */
 }
+
 .cart h2 {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em; /* увеличен внешний отступ заголовка */
+  font-size: 2rem; /* увеличенный размер шрифта заголовка */
 }
+
 .cart button {
-  background-color: var(--accent-color);
-  border: none;
-  color: white;
-  margin: 0 auto;
+  background-color: #0e5c70; /* изменен цвет кнопки */
+  border: 2px solid #0e5c70; /* изменен цвет границы кнопки */
+  color: #fff;
+  margin: 1em auto; /* изменен внешний отступ кнопки */
   text-align: center;
-  width: 300px;
-  padding-block: 0.5em;
-  border-radius: 0.4em;
-  margin-top: 1em;
+  width: 100%; /* ширина кнопки занимает всю доступную ширину */
+  padding: 1em;
+  border-radius: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* добавлены эффекты плавного изменения при наведении */
 }
+
+.cart button:hover {
+  background-color: #fff;
+  color: #0e5c70;
+}
+
 .cart .nothing {
   text-align: center;
-  margin-top: 1em;
+  margin-top: 2em; /* увеличен внешний отступ для текста "нет товаров" */
+  font-size: 1.2rem; /* уменьшенный размер шрифта */
+  color: #777; /* изменен цвет текста */
 }
+
 
 .item {
   display: flex;
-  gap: 2em;
-  max-width: 700px;
-  margin: 3em auto;
+  flex-direction: column; /* изменен направление расположения элементов */
+  gap: 2em; /* уменьшен размер промежутка между элементами */
+  max-width: 600px; /* уменьшена максимальная ширина элемента */
+  margin: 2em auto; /* уменьшен внешний отступ элемента */
+  padding: 1em; /* добавлен внутренний отступ элемента */
+  border: 2px solid #0e5c70; /* добавлена граница */
+  border-radius: 1em; /* добавлен скругленный угол */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* добавлена тень */
 }
+
 .item .photo {
-  border-radius: 1em;
-  width: 20rem;
+  border-radius: 1.5em;
+  width: 100%; /* ширина изображения занимает всю доступную ширину контейнера */
   aspect-ratio: 1;
   background-size: cover;
   background-position: center;
 }
+
 .item .name {
-  font-size: 1.5rem;
+  font-size: 2rem; /* увеличен размер шрифта имени товара */
+  margin-top: 0.5em; /* уменьшен внешний отступ сверху */
+  color: #333; /* изменен цвет текста */
 }
+
 .item .price {
-  font-size: 2rem;
+  font-size: 2.8rem; /* увеличен размер шрифта цены */
+  color: #ff2222; /* изменен цвет текста */
 }
+
 .item .description {
-  max-width: 240px;
-  opacity: 90%;
+  max-width: 100%; /* описание теперь может занимать всю доступную ширину */
+  opacity: 70%; /* уменьшена прозрачность текста */
   cursor: pointer;
 }
+
 .item button {
-  background-color: var(--accent-color);
-  border: none;
-  color: white;
-  margin: 0 auto;
+  background-color: #0e5c70; /* изменен цвет кнопки */
+  border: 2px solid #0e5c70; /* изменен цвет границы кнопки */
+  color: #fff;
+  margin: 1em auto; /* изменен внешний отступ кнопки */
   text-align: center;
-  padding-block: 0.5em;
-  padding-inline: 1em;
-  border-radius: 0.5em;
-  margin-top: 1em;
-  transition: all 0.3s ease-in-out;
+  padding: 0.8em 1.8em; /* немного увеличены отступы кнопки */
+  border-radius: 1em; /* увеличен радиус скругления углов кнопки */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* добавлены эффекты плавного изменения при наведении */
+}
+
+.item button:hover {
+  background-color: #fff;
+  color: #0e5c70;
 }

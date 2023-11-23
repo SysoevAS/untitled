@@ -19,6 +19,7 @@ export default function App() {
         setCart((currentCart) => ([...currentCart, item]));
     }
 
+
     return (
         <>
             <Header handleClick={switchPage} />
